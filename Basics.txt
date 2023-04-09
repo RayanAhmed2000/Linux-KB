@@ -1,0 +1,169 @@
+FILE MANIPULATION COMMANDS
+
+cat
+touch
+echo
+vi
+nano
+cp      [$ cp Src_file Dest_file   -p to preserve metadata ]
+cd
+ls      (-laFtR)
+ln      (shortcuts     -s for softlink ) $ ln  [original filename] [link name] $ ln  -s [original filename] [link name] 
+mv
+rm
+rmdir
+mkdir       (How to create multiple dir) -> mkdir -p dir1/dir2/dir3
+find        [$ find ./directory1 -name sample.txt]   it will search sample.txt in directory1
+diff        diff file1 file2 | prints line that are different in both files
+locate      [$ locate sample.txt]
+wc          [$ wc File1]    output format - lines words charecters
+more        view the text files in the command prompt | one page at a itme i.e paging through a textfile
+less        same as more but with more options less is newer
+most        all features of more + less + view multiple files at once
+tail        to display specified number of lines from bottom of the file | tail -n 15   
+head        to display specified number of lines from top of the file | head -n 15
+gzip        Compression Tool
+gunzip
+tar         Archiver tool/combine multiple files into one Zip file  | tar -cvf dir1tar dir1
+chmod
+sort        sort file1
+stat        access files metadata
+
+SYSTEM UPDATE/DOWNLOAD/INSTALL
+
+apt-get update
+apt-get install
+apt-cache search <package name>
+apt list --installed
+
+curl (curl is a command-line tool to transfer data to or from a server, 
+using any of the supported protocols (HTTP, FTP, IMAP, POP3, SCP, SFTP) Example curl http://192.10.10.1/latest/metadata
+
+(Yellowdog updater Modified)
+yum install
+yum update
+yum list installed
+
+1. NOTE - Ubuntu is based on Debian, which uses apt not yum
+
+service httpd start/stop
+service httpd status
+
+systemctl httpd dnsmasq
+systemctl status httpd
+
+
+
+USER/GROUP
+useradd
+groupadd
+userdel
+groupdel
+gpasswd -a
+gpasswd -M
+chown 
+chgrp
+
+
+NETWORK
+ping                (check network connectivity by sending paclets to server)
+nslookup            (fetches networking details from DNS server)
+netstat             (shows network stats such as route tables)
+host                (find domain name of IP address and vice versa)
+arp                 (address resolution protocol || resolve IP address into  MAC address)
+traceroute          (used to get route of packet)
+ifconfig            (show IP Addersses)
+telnet              (telnet hostname/IP address  |  create a remote connection with a system over TCP)
+
+
+
+
+
+
+OTHER
+
+history             used to view the previously executed command
+hostname            name of current host system          
+help                tells command usage and options
+man                 used to display manual of command i.e. detailed info
+info                texual / descriptive info
+whoami              username
+which               locate executable file
+uname               OS info
+ps                  list current processes and PID's
+chkconfig           view update run level settings of services
+alias               shortcut / reference or nickname given to a commmand in case youre tired of typing lomg commands
+grep                filter that searches for a particular pattern of characters in a file    (global regular expression print)      
+ssh                 remotely access server from a client over an encrypted connection
+scp                 Securely copy files between servers 
+gpg                 key Management system | file encryption | ssh connections without passwd
+fdisk               disk partitioning | list the disk connections i.e. pendrive           
+mount               mount external storage to a directory on system
+sudo                switch to root user
+exit                exit shell
+clear               clear terminal
+pwd                 display path of current working directory
+cal
+time
+date
+
+
+
+ADVANCED COMMANDS
+
+awk               
+
+it is like a filter command that interprets data fed to it and transforms data in a certain way 
+by prforming programming operations
+
+echo "abc def" | awk '{print $2}'
+def
+
+----------------------------------------------------------------------------------------------------
+
+tr
+
+tr stands for translate | used to translate or delete charecters
+uppercase to lowercase | find and replace
+
+echo "abc def" | tr "[a-z]" "[A-Z]"
+ABC DEF
+
+----------------------------------------------------------------------------------------------------
+
+
+cut
+
+cutting out sections from data fed to it
+
+echo "abc def" | cut -f 2 -d ' ' 
+def
+
+----------------------------------------------------------------------------------------------------
+
+apropos 
+
+When youre not sure which command you should use ask linux
+
+apropos copy
+
+it will show all commands that do something related to copying
+
+----------------------------------------------------------------------------------------------------
+
+What are commads to view the machine stats
+
+mpstat
+vmstat
+free -m         (free memory)
+iostat
+netstat
+
+
+lscpu
+lshw
+lspci
+
+last         (who last used machine)
+last root    (last root user)
+
