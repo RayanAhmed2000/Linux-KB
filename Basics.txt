@@ -136,7 +136,7 @@ cut
 
 cutting out sections from data fed to it
 
-echo "abc def" | cut -f 2 -d ' ' 
+echo "abc def" | cut -f2 -d ' ' 
 def
 
 ----------------------------------------------------------------------------------------------------
