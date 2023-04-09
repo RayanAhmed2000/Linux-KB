@@ -6,6 +6,7 @@ chmod g+w <filename>
 ```
 chmod g-x,u-w,o-rx <filename>
 ```
+- number method
 ```
 chmod 777 <filename>
 ```
