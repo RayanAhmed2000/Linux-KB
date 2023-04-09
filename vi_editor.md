@@ -11,4 +11,5 @@
 - :x | :wq    (save and exit)
 
 ## Line substitution
-- :%s/line1/line2/g      (globally replace line1 with line2)
+- :%s/line1/line2/g      
+(globally replace line1 with line2)
