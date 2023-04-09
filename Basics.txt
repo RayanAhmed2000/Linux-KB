@@ -15,7 +15,8 @@ rmdir
 mkdir       (How to create multiple dir) -> mkdir -p dir1/dir2/dir3
 find        [$ find ./directory1 -name sample.txt]   it will search sample.txt in directory1
 diff        diff file1 file2 | prints line that are different in both files
-locate      [$ locate sample.txt]
+locate      [$ locate sample.txt] 
+upadtedb    [recommended to run before using locate]
 wc          [$ wc File1]    output format - lines words charecters
 more        view the text files in the command prompt | one page at a itme i.e paging through a textfile
 less        same as more but with more options less is newer
