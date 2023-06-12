@@ -39,3 +39,8 @@ chown rayan.group1 /dir1 -R
 ```
 umask 0002
 ```
+
+# Prompt a user to change password everytime after a specified period 
+```
+chage -m 90 testuser
+```
