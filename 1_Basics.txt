@@ -67,16 +67,19 @@ chgrp
 
 
 NETWORK
-ping                (check network connectivity by sending paclets to server)
-nslookup            (fetches networking details from DNS server)
-netstat             (shows network stats such as route tables)
-host                (find domain name of IP address and vice versa)
-arp                 (address resolution protocol || resolve IP address into  MAC address)
-traceroute          (used to get route of packet)
+ping                (check network connectivity by sending paclets to server) | USE CASE - Check server reachability
+nslookup            (fetches networking details from DNS server) | USE CASE - Check if DNS server is resolving hostname correctly
+netstat             (shows network stats such as route tables) | USE CASE - check if service/application is listening properly at desired port
+host                (find domain name of IP address and vice versa) | USE CASE - check IP behind hostname
+arp                 (address resolution protocol || resolve IP address into  MAC address) 
+traceroute          (used to get route of packet) | USE CASE - Check at which 'Hop' packet is getting dropped/missed each output row represents a Router/Hop
 ifconfig            (show IP Addersses)
-telnet              (telnet hostname/IP address  |  create a remote connection with a system over TCP)
+telnet              (telnet hostname/IP address  |  create a remote connection with a system over TCP) | USE CASE - Check if a specific port is open and accepting req
+dig                 () | USE CASE - 
 
-ADVANCED NETWORKING 
+Combine tools: Use ping + traceroute + telnet in sequence to debug connection issues
+
+ADVANCED NETWORKING/ DIGGING INFO from Machine
 
 echo "1. OS Type: $(uname -s)"
 echo "2. OS Version: $(uname -r)"
