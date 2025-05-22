@@ -18,9 +18,9 @@ diff        diff file1 file2 | prints line that are different in both files
 locate      [$ locate sample.txt] 
 upadtedb    [recommended to run before using locate]
 wc          [$ wc File1]    output format - lines words charecters
-more        view the text files in the command prompt | one page at a itme i.e paging through a textfile
-less        same as more but with more options less is newer
-most        all features of more + less + view multiple files at once
+more        view the text files in the command prompt | one page at a itme i.e paging through a textfile | ONLY FORWARD NAVIGATION
+less        same as more but with more options less is newer | FORWARD + BACKWARD NAVIGATION
+most        all features of more + less + view multiple files at once | FW + BW + Horizontal Scrolling <- -> FOR WIDE LINES
 tail        to display specified number of lines from bottom of the file | tail -n 15   
 head        to display specified number of lines from top of the file | head -n 15
 gzip        Compression Tool
@@ -76,7 +76,37 @@ traceroute          (used to get route of packet)
 ifconfig            (show IP Addersses)
 telnet              (telnet hostname/IP address  |  create a remote connection with a system over TCP)
 
+ADVANCED NETWORKING 
 
+echo "1. OS Type: $(uname -s)"
+echo "2. OS Version: $(uname -r)"
+echo "3. CPU Type: $(uname -p)"
+echo "4. Number of Cores: $(nproc)"
+echo "5. CPU Load (1, 5, 15 min): $(uptime | awk -F'load average:' '{ print $2 }')"
+
+# Get primary network interface
+primary_iface=$(ip route | grep default | awk '{print $5}')
+echo "6. Primary Network Interface: $primary_iface"
+
+# Traffic In/Out
+rx_bytes=$(cat /sys/class/net/$primary_iface/statistics/rx_bytes)
+tx_bytes=$(cat /sys/class/net/$primary_iface/statistics/tx_bytes)
+echo "7. Traffic In: $rx_bytes bytes"
+echo "   Traffic Out: $tx_bytes bytes"
+
+# MAC Address
+mac_addr=$(cat /sys/class/net/wlp0s20f3/address)
+echo "8. MAC Address: $mac_addr"
+
+# Memory Info
+mem_total=$(grep MemTotal /proc/meminfo | awk '{print $2}')
+mem_free=$(grep MemFree /proc/meminfo | awk '{print $2}')
+echo "9. Free Memory: $mem_free KB"
+echo "10. Total Memory: $mem_total KB"
+
+# Number of running processes
+processes=$(ps -e --no-headers | wc -l)
+echo "11. Number of Running Processes: $processes"
 
 
 
